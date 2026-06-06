@@ -26,5 +26,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, () => {
-  console.log(`🚀 OPay Smart Savings Server running on port ${PORT}`);
+  console.log(`🚀 Smart Savings Server running on port ${PORT}`);
 });

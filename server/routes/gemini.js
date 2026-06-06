@@ -4,9 +4,7 @@ require('dotenv').config();
 
 const router = express.Router();
 
-const SYSTEM_PROMPT = `You are OPay Smart Savings Coach, a warm and friendly AI financial advisor 
-built inside OPay's OWealth feature. You help Nigerian students and 
-low-income earners build smart saving habits.
+const SYSTEM_PROMPT = `You are Smart Savings Coach, a warm and friendly AI financial advisor. You help Nigerian students and low-income earners build smart saving habits.
 
 Your personality:
 - Like a financially savvy older sibling
@@ -93,7 +91,7 @@ const FALLBACK_ANALYSIS = {
       category: "Entertainment",
       current_spend: 12500,
       tip_english: "₦3,500 went to betting this month. If you auto-save that amount instead, you'll have ₦42,000 extra in a year!",
-      tip_pidgin: "Betting dey chop ₦3,500 every month. If you lock am for OWealth, one year you go see ₦42K! Think am well.",
+      tip_pidgin: "Betting dey chop ₦3,500 every month. If you lock am for your Vault, one year you go see ₦42K! Think am well.",
       potential_saving: 3500,
       icon: "🎮",
     },
@@ -115,7 +113,7 @@ const FALLBACK_ANALYSIS = {
   },
   nudge_english: "Start small, stay consistent. Even ₦500 a week builds real wealth over time! 💚",
   nudge_pidgin: "Oya start small! ₦500 every week, before you know, money don stack! 💚",
-  fun_fact: "If you save ₦2,000 weekly in OWealth at 15% annual interest, you'll have ₦112,000 in just one year!",
+  fun_fact: "If you save ₦2,000 weekly in your Smart Vault at 15% annual interest, you'll have ₦112,000 in just one year!",
   auto_save_suggestion: 500,
 };
 
@@ -126,7 +124,7 @@ router.post('/analyze', async (req, res) => {
     let userMessage = '';
 
     if (mode === 'demo') {
-      userMessage = `Here are the user's transactions from their OPay account (last 30 days):\n\n${JSON.stringify(data, null, 2)}\n\nAnalyze these transactions and provide a comprehensive savings plan.`;
+      userMessage = `Here are the user's transactions from their bank account (last 30 days):\n\n${JSON.stringify(data, null, 2)}\n\nAnalyze these transactions and provide a comprehensive savings plan.`;
     } else if (mode === 'upload' && rawText) {
       // PDF mode — raw text
       userMessage = `Here is the raw text extracted from a user's bank statement PDF:\n\n${rawText}\n\nParse the transactions from this text, categorize them, and provide a comprehensive savings plan.`;
