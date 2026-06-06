@@ -47,7 +47,7 @@ const strings = {
     upload_formats: ".pdf .csv",
 
     // Dashboard
-    greeting_demo: "Welcome back, Chioma 👋",
+    greeting_demo: "Welcome back, User 👋",
     greeting_upload: "Welcome! Here's your analysis 👋",
     badge_demo: "Demo Mode",
     badge_upload: "Real Data ✓",

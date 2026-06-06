@@ -6,7 +6,7 @@ import strings from '../utils/strings';
 export default function OAuthModal({ isOpen, onClose, onAllow }) {
   const { language } = useApp();
   const s = strings[language];
-  const [phone, setPhone] = useState('08012345678');
+  const [phone, setPhone] = useState('08123456789');
   const [step, setStep] = useState('select_bank'); // 'select_bank' or 'auth'
 
   if (!isOpen) return null;
@@ -84,7 +84,7 @@ export default function OAuthModal({ isOpen, onClose, onAllow }) {
                     >
                       {bank.name}
                       {!bank.available && <span style={{ fontSize: '11px', background: '#F0F0F0', padding: '4px 8px', borderRadius: '8px', color: '#666' }}>Coming Soon</span>}
-                      {bank.available && <span style={{ fontSize: '11px', background: '#00A859', color: '#FFF', padding: '4px 8px', borderRadius: '8px' }}>Works</span>}
+                      {bank.available && <span style={{ fontSize: '11px', background: '#00A859', color: '#FFF', padding: '4px 8px', borderRadius: '8px' }}></span>}
                     </button>
                   ))}
                 </div>
